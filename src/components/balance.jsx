@@ -1,9 +1,12 @@
 import React from 'react';
 import { HiMenuAlt3 } from 'react-icons/hi';
 import { IoArrowDown, IoArrowUp } from 'react-icons/io5';
+import { RiCloseLine } from 'react-icons/ri';
+import DropMenu from './dropmenu';
 
 const Balance = () => {
   const [data, setData] = React.useState('');
+  const [drop, setDrop] = React.useState(false);
 
   React.useEffect(() => {
     async function fetchData() {
@@ -30,9 +33,17 @@ const Balance = () => {
           </section>
         </nav>
 
-        <button className=' flex items-center justify-center w-10 h-10  rounded-full'>
-          <HiMenuAlt3 size={28} />
+        <button
+          onClick={() => setDrop(!drop)}
+          className=' flex items-center justify-center w-10 h-10 z-10 rounded-full'
+        >
+          {drop ? (
+            <RiCloseLine size={28} color='black' />
+          ) : (
+            <HiMenuAlt3 size={28} />
+          )}
         </button>
+        <DropMenu drop={drop} />
       </header>
 
       <div className=' flex flex-col justify-center gap-2'>
