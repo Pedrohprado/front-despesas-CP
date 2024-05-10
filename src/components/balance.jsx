@@ -22,6 +22,7 @@ const Balance = () => {
 
     fetchData();
   }, []);
+
   return (
     <section className=' w-full h-[40%]  bg-zinc-950 text-white rounded-b-xl p-5 flex flex-col justify-between shadow'>
       <header className=' flex items-center justify-between'>

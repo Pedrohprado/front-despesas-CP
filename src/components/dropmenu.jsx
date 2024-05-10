@@ -14,7 +14,10 @@ const DropMenu = ({ drop }) => {
         >
           adicionar
         </Link>
-        <Link to={'/'} className=' bg-slate-400 w-2/3 text-center py-1 rounded'>
+        <Link
+          to={'/balance'}
+          className=' bg-slate-400 w-2/3 text-center py-1 rounded'
+        >
           levantamento
         </Link>
       </nav>
